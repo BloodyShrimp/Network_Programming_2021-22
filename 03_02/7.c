@@ -45,14 +45,14 @@ int main(int argc, const char *argv[])
         {
             line_count++;
         }
-        if(line_count % 2 == 1)
+        if (line_count % 2 == 1)
         {
-        written_bytes = write(targetdesc, &buffer, read_bytes); // zapisanie odczytanych bajtów do pliku docelowego
-        if (written_bytes == -1)                               // obsługa błędu funkcji write()
-        {
-            perror("Błąd zapisu");
-            exit(EXIT_FAILURE);
-        }
+            written_bytes = write(targetdesc, &buffer, read_bytes); // zapisanie odczytanych bajtów do pliku docelowego
+            if (written_bytes == -1 || written_bytes < read_bytes)  // obsługa błędu funkcji write()
+            {
+                perror("Błąd zapisu");
+                exit(EXIT_FAILURE);
+            }
         }
     }
     if (close(sourcedesc) == -1) // zamknięcie pliku źródłowego i obsługa błędu

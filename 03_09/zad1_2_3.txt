@@ -1,0 +1,15 @@
+1) Uruchomiene klienta jako pierwszego powoduje błąd
+Jeżeli server się zamknie to klient się rozłączy
+Jeżeli klient się rozłaczy to server dalej nasłuchuje
+
+2) Klient się rozłączy server dalej nasłuchuje
+Server się zamknie klient jest nadal połączony
+Można uruchomić klienta jako pierwszego
+
+3) -v : Specify verbose output. Dodatkowe informacje, porty i adres
+-l : Nasłuchuj połączenia
+-u : Użyj UDP zamiast domyślnego TCP
+-C : \r\n jako EOL
+zamienia LF \n na CRLF \r\n
+np. Windows używa \r\n jako koniec linii
+

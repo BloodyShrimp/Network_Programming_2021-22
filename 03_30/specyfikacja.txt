@@ -1,0 +1,8 @@
+Komunikacja odbywa się poprzez protokół TCP.
+Klient wysyła ciągi znaków zawierające cyfry i spacje i kończące się znakami \r\n
+Jedna linia to ciąg cyfr i spacji kończący się znakami \r\n
+Serwer odsyła wynik sumowania zakończony znakami \r\n dla każdej odebranej linii
+Jeżeli linia zawiera niepoprawne znaki lub przekroczony został limit reprezentacji liczby całkowitej to serwer odsyła komunikat "ERROR\r\n"
+Odbierane wiadomości nie muszą być kompletne, serwer odbiera znaki i odsyła wynik dopiero po napotkaniu znaków \r\n
+Jeżeli w wiadomości linia się urywa to serwer czeka na kolejną wiadomość
+Jeżeli klient nie wysyła żadnej wiadomości przez określony czas to serwer może zamknąć połączenie.
